@@ -26,6 +26,7 @@ class MyHomePage extends StatelessWidget {
           child: Row(
             //We are using ROW to align the CHILDREN Elements in ROW
             children: [
+              //Expanded: It allows to make the children of a Row and Column widget to occupy the maximum possible area.
               Expanded(
                 child: Text('Ayush', textAlign: TextAlign.center),
               ),
