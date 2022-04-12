@@ -6,7 +6,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Multiple Child Class',
+      title: "Multiple Widget Layout",
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
@@ -15,35 +15,32 @@ class MyApp extends StatelessWidget {
   }
 }
 
-
 class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    //do not return scaffold as we don't need app bar etc, but our custome text on center
     return Center(
+      //Center > Container > Stack > Children > Container
       child: Container(
-          alignment: Alignment.center,
-          color: Colors.white,
-          child: Row(
-            //We are using ROW to align the CHILDREN Elements in ROW
-            children: [
-              //Expanded: It allows to make the children of a Row and Column widget to occupy the maximum possible area.
-              Expanded(
-                child: Text('Ayush', textAlign: TextAlign.center),
-              ),
-              Expanded(
-                child: Text(
-                  'John',
-                  textAlign: TextAlign.center,
-                ),
-              ),
-              Expanded(
-                  child: FittedBox(
-                fit: BoxFit.contain,
-                child: const FlutterLogo(),
-              ))
-            ],
-          )),
+        alignment: Alignment.center,
+        color: Colors.white,
+        child: Stack(
+          children: [
+            Container(
+              color: Colors.blue,
+            ),
+            Container(
+              color: Colors.red,
+              height: 400.0,
+              width: 300,
+            ),
+            Container(
+              color: Colors.green,
+              height: 220,
+              width: 200,
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
