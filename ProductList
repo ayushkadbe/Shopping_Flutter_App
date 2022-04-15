@@ -17,13 +17,14 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatelessWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+  MyHomePage({Key? key, required this.title}) : super(key: key);
   final String title;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(title: Text("Product List")),
+        //LISTVIEW
         body: ListView(
           padding: const EdgeInsets.fromLTRB(3.0, 12.0, 3.0, 12.0),
           children: <Widget>[
@@ -58,7 +59,12 @@ class MyHomePage extends StatelessWidget {
 }
 
 class ProductBox extends StatelessWidget {
-  ProductBox({Key key, this.name, this.description, this.price, this.image})
+  ProductBox(
+      {Key? key,
+      required this.name,
+      required this.description,
+      required this.price,
+      required this.image})
       : super(key: key);
   final String name;
   final String description;
@@ -67,20 +73,30 @@ class ProductBox extends StatelessWidget {
 
   Widget build(BuildContext context) {
     return Container(
+        //CONTAINER()
         padding: EdgeInsets.all(2),
         height: 110,
         child: Card(
+            //child: Card()
             child: Row(
+                //child: Row()
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
-              Image.asset("assets/" + image),
+              //children: []
+              Image.asset("assets/" + image), //Image
               Expanded(
+                  //Expanded
+
                   child: Container(
+                      //child: Container
                       padding: EdgeInsets.all(5),
                       child: Column(
+                        //child: Column
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+
                         children: <Widget>[
-                          Text(this.name,
+                          //children: []
+                          Text(this.name, //Text(name), Text(descr), Text(Price)
                               style: TextStyle(fontWeight: FontWeight.bold)),
                           Text(this.description),
                           Text("Price: " + this.price.toString()),
