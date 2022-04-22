@@ -1,0 +1,71 @@
+import 'package:flutter/material.dart';
+
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    //Material App
+    return MaterialApp(
+      title: 'Gesture Demo Application',
+      theme: ThemeData(
+        primarySwatch: Colors.green,
+      ),
+      home: MyHomePage(),
+    );
+  }
+}
+
+//Stateful Widget CLASS 1
+class MyHomePage extends StatefulWidget {
+  @override
+  //create state using createState() method
+  MyHomePageState createState() => new MyHomePageState();
+}
+
+//STATEFUL WIDGET STATE CLASS
+class MyHomePageState extends State<MyHomePage> {
+  //Scaffold(appbar, title,
+  //body( new Center(
+  // child: GestureDetector(
+  //    onTap();
+  //    )
+  // child: Container(BoxDecoration, child: Center(child: Text('CLICK ME' )))
+  //  )
+  // )
+  //)
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      //SCAFFOLD
+      appBar: new AppBar(
+        //APPBAR
+        title: new Text('Gesture Example'),
+        centerTitle: true,
+      ),
+      body: new Center(
+        //BODY: CENTER
+        child: GestureDetector(
+            //CHILD: GESTUREDETECTOR( )
+            onTap: () {
+              //onTap()
+              print('BOX CLICKED');
+            },
+            child: Container(
+              //chilld container
+              height: 60,
+              width: 120,
+              padding: EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                color: Colors.green,
+                borderRadius: BorderRadius.circular(15),
+              ),
+              child: Center(
+                child: Text('CLICK ME'),
+              ),
+            ) //child Center(child: text)
+            ),
+      ),
+    );
+  }
+}
