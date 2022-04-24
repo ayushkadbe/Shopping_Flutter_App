@@ -1,0 +1,100 @@
+/*
+ void main(){
+	 
+ } 
+ class DemoClass extends StatelessWidget{
+	 Widget build(BuildContext context) {
+	
+	 //RAW GESTURE DETECTOR
+	 return RawGestureDetector(
+		 gestures: {},
+		 behavior: HitTestBehavior.opaque,
+		 
+		 //PARENT CONTAINER
+		 child: Container(
+			 child: Center(
+				 
+				 //RAW GESTURE DETECTOR
+				 child: RawGestureDetector(
+					 gestures: {},
+					 
+					 //NESTED CONTAINER
+					 child: Container(),
+					 
+				),  // RawGestureDetector
+			),  //Center
+		), //Container
+		
+	);  //RawGestureDetector
+	 
+	} //BuildContext
+ }
+ */
+
+import 'package:flutter/material.dart';
+import 'package:flutter/gestures.dart';
+
+void main() {
+  runApp(
+    MaterialApp(
+      title: 'Multiple Gestures',
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Multiple Gestures'),
+        ),
+        body: DemoApp(),
+      ),
+    ),
+  );
+}
+
+class DemoApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return RawGestureDetector(
+      gestures: {
+        AllowMultipleGestureRecognizer: GestureRecognizerFactoryWithHandlers<
+                AllowMultipleGestureRecognizer>(
+            //CONSTRUCTOR
+            () => AllowMultipleGestureRecognizer(),
+            //INSTRUCTOR
+            (AllowMultipleGestureRecognizer instance) {
+          instance.onTap = () => print('THis is PARENT CONTAINER');
+        }),
+      },
+      behavior: HitTestBehavior.opaque,
+
+      //PARENT CONTAINER
+      child: Container(
+        color: Colors.blue,
+        child: Center(
+          child: RawGestureDetector(
+            gestures: {
+              AllowMultipleGestureRecognizer:
+                  GestureRecognizerFactoryWithHandlers<
+                          AllowMultipleGestureRecognizer>(
+                      //CONSTRUCTOR
+                      () => AllowMultipleGestureRecognizer(),
+                      //INSTRUCTOR
+                      (AllowMultipleGestureRecognizer instance) {
+                instance.onTap = () => print('Its the NESTED CONTAINER');
+              }),
+            },
+            child: Container(
+              color: Colors.orange,
+              width: 250,
+              height: 350,
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class AllowMultipleGestureRecognizer extends TapGestureRecognizer {
+  @override
+  void rejectGesture(int pointer) {
+    acceptGesture(pointer);
+  }
+}
