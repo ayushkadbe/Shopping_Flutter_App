@@ -1,0 +1,63 @@
+import 'package:flutter/material.dart';
+
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: MyHomePage(),
+    );
+  }
+}
+
+class MyHomePage extends StatefulWidget {
+  _MyHomePageState createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text("FLUTTER ROW EXAMPLE")),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Container(
+            margin: EdgeInsets.all(20),
+            padding: EdgeInsets.all(15),
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(8), color: Colors.green),
+            child: Text(
+              "Flutter",
+              style: TextStyle(color: Colors.yellow, fontSize: 25),
+            ),
+          ),
+
+          //Second Container
+          Container(
+            margin: EdgeInsets.all(20),
+            padding: EdgeInsets.all(12),
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(8), color: Colors.green),
+            child: Text(
+              "React",
+              style: TextStyle(color: Colors.yellow, fontSize: 25),
+            ),
+          ),
+          //THIRD CONTAINER
+          Container(
+            margin: EdgeInsets.all(20),
+            padding: EdgeInsets.all(15),
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(8), color: Colors.green),
+            child: Text(
+              "Python",
+              style: TextStyle(color: Colors.yellow, fontSize: 25),
+            ),
+          )
+        ],
+      ),
+    );
+  }
+}
