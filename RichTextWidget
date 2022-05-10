@@ -28,11 +28,27 @@ class MyTextPage extends StatelessWidget {
                   style: TextStyle(color: Colors.black, fontSize: 20),
 
                   //children inside textspan
-                  children: <TextSpan>[
+                  children: [
                     TextSpan(
                         text: 'Sing up',
                         style: TextStyle(color: Colors.green, fontSize: 20),
-                        recognizer: TapGestureRecognizer()..onTap = () {})
+                        recognizer: TapGestureRecognizer()..onTap = () {}),
+
+                    //TextSpan 2
+                    TextSpan(
+                        text: " Click",
+                        style: TextStyle(
+                          fontSize: 25,
+                        )),
+
+                    WidgetSpan(
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 2.0),
+                        child: Icon(Icons.add, color: Colors.red),
+                      ),
+                    ),
+
+                    TextSpan(text: "Me", style: TextStyle(fontSize: 25)),
                   ]),
             ),
           ),
