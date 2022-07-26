@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/utils/routes.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
+
+  @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  String name = "";
 
   @override
   Widget build(BuildContext context) {
@@ -26,8 +33,9 @@ class LoginPage extends StatelessWidget {
               height: 20.0,
             ),
 
-            const Text(
-              "Welcome",
+            Text(
+              "Welcome $name",
+              // ignore: prefer_const_constructors
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
             const SizedBox(
@@ -44,6 +52,13 @@ class LoginPage extends StatelessWidget {
                       hintText: "Enter Username",
                       labelText: "Username",
                     ),
+                     //$name in front of welcome
+                    onChanged: (value) {
+                      name = value;
+                      setState(
+                          () {}); //Now in statefulwidget we have to build whole screen again
+                      //so call BuildState again using setState() method to change the state
+                    },
                   ),
                   TextFormField(
                     obscureText: true,
@@ -51,6 +66,7 @@ class LoginPage extends StatelessWidget {
                       hintText: "Enter Password",
                       labelText: "Password",
                     ),
+                   
                   ),
                   const SizedBox(height: 30.0),
                   ElevatedButton(
@@ -59,7 +75,6 @@ class LoginPage extends StatelessWidget {
                       minimumSize: const Size(127, 45),
                     ),
                     onPressed: () {
-                      //Navigator.pushNamed(context, MyRoutes.homeRoute);
                       Navigator.pushNamed(context, MyRoutes.homeRoute);
                     },
                     child: const Text("Login"),

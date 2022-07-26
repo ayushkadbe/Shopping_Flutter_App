@@ -20,6 +20,7 @@ class MyApp extends StatelessWidget {
         primaryTextTheme:
             GoogleFonts.latoTextTheme(), //only primary text of whole app
       ),
+      debugShowCheckedModeBanner: false,
 
       //ROUTES: {Map<String, Widget Function(BuildContext)> routes = const <String, WidgetBuilder>{}}
       initialRoute: "/",
