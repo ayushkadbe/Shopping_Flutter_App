@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/utils/routes.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -59,6 +60,7 @@ class LoginPage extends StatelessWidget {
                     ),
                     onPressed: () {
                       //Navigator.pushNamed(context, MyRoutes.homeRoute);
+                      Navigator.pushNamed(context, MyRoutes.homeRoute);
                     },
                     child: const Text("Login"),
                   )
