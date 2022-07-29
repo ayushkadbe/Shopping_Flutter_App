@@ -71,32 +71,35 @@ class _LoginPageState extends State<LoginPage> {
                   const SizedBox(height: 30.0),
 
                   InkWell(
-                    onTap: () {
+                    //animate button to red from primary color on click
+                    splashColor: Colors.red,
+                    onTap: () async {
                       //now to change the state on login button click to show animation
                       setState(() {
                         changeButton = true;
                       });
+                      await Future.delayed(const Duration(seconds: 1));
                       Navigator.pushNamed(context, MyRoutes.homeRoute);
                     },
-                    child: Container(
+                    child: Ink(
+                      //Ink can be used instead of Container or AnimatedCointer for More features.
                       //conditional statement for animation when changebutton = true;
                       width: changeButton ? 70 : 130,
                       height: 50,
-                      alignment: Alignment.center,
-                      child:changeButton? Icon(Icons.done, color: Colors.white)
-                      :const Text(
-                        "Login",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 20,
-                        ),
-                      ),
+
+                      child: changeButton
+                          ? const Icon(Icons.done, color: Colors.white)
+                          : const Text(
+                              "Login",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 20,
+                              ),
+                            ),
                       decoration: BoxDecoration(
                         color: Colors.blue,
-                        //if changeBUtton true then boxshape circle
-                        shape: changeButton?BoxShape.circle: BoxShape.rectangle, 
-                        //borderRadius:
-                            //BorderRadius.circular(changeButton ? 20 : 8),
+                        borderRadius:
+                            BorderRadius.circular(changeButton ? 70 : 8),
                       ),
                     ),
                   ),
