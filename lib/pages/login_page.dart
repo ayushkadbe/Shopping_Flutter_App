@@ -10,6 +10,7 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   String name = "";
+  bool changeButton = false; //for animation of login button
 
   @override
   Widget build(BuildContext context) {
@@ -52,7 +53,7 @@ class _LoginPageState extends State<LoginPage> {
                       hintText: "Enter Username",
                       labelText: "Username",
                     ),
-                     //$name in front of welcome
+                    //$name in front of welcome
                     onChanged: (value) {
                       name = value;
                       setState(
@@ -66,33 +67,40 @@ class _LoginPageState extends State<LoginPage> {
                       hintText: "Enter Password",
                       labelText: "Password",
                     ),
-                   
                   ),
                   const SizedBox(height: 30.0),
 
                   InkWell(
-                    onTap: (){
+                    onTap: () {
+                      //now to change the state on login button click to show animation
+                      setState(() {
+                        changeButton = true;
+                      });
                       Navigator.pushNamed(context, MyRoutes.homeRoute);
                     },
                     child: Container(
-                      width: 127,
-                      height: 45,
+                      //conditional statement for animation when changebutton = true;
+                      width: changeButton ? 70 : 130,
+                      height: 50,
                       alignment: Alignment.center,
-                      child: const Text("Login",
-                       style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 21, 
+                      child:changeButton? Icon(Icons.done, color: Colors.white)
+                      :const Text(
+                        "Login",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
                         ),
                       ),
                       decoration: BoxDecoration(
                         color: Colors.blue,
-                        borderRadius: BorderRadius.circular(8),
+                        //if changeBUtton true then boxshape circle
+                        shape: changeButton?BoxShape.circle: BoxShape.rectangle, 
+                        //borderRadius:
+                            //BorderRadius.circular(changeButton ? 20 : 8),
                       ),
                     ),
                   ),
 
-
-                  
                   // ElevatedButton(
                   //   style: TextButton.styleFrom(
                   //     textStyle: const TextStyle(fontSize: 19),
