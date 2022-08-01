@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:myapp/pages/login_page.dart';
 import 'package:myapp/utils/routes.dart';
+import 'package:myapp/widgets/theme.dart';
 import 'pages/home_page.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:device_preview/device_preview.dart';
@@ -23,14 +24,9 @@ class MyApp extends StatelessWidget {
       builder: DevicePreview.appBuilder,
       //THEME
       themeMode: ThemeMode.light,
-      theme: ThemeData(primarySwatch: Colors.blue),
-      darkTheme: ThemeData(
-        brightness: Brightness.dark,
-        //
-        fontFamily: GoogleFonts.lato().fontFamily, //whole app
-        primaryTextTheme:
-            GoogleFonts.latoTextTheme(), //only primary text of whole app
-      ),
+      theme: MyTheme.lightTheme(context),
+      darkTheme: MyTheme.darkTheme(context),
+      
       debugShowCheckedModeBanner: false,
 
       //ROUTES: {Map<String, Widget Function(BuildContext)> routes = const <String, WidgetBuilder>{}}
