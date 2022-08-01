@@ -45,7 +45,7 @@ class _LoginPageState extends State<LoginPage> {
             children: [
               Image.asset(
                 "assets/images/login_image.png",
-                fit: BoxFit.scaleDown,
+                fit: BoxFit.fitHeight,
               ),
 
               //for spacing between two as well as any content inside it
