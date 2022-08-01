@@ -1,0 +1,12 @@
+NOTE: catalog.dart contains DATA ITEMS (id, name, image source, color)
+      item_widget.dart contains UI CODE fetching data from catalog.dart
+1) Create catalog.dart (contain DataModel & DataModel structuring)
+2) Create ItemWidget() inside lib/widgets/
+  -create object of class Item
+  -create constructor of class object
+  -create ListTile wrapped in Card with ONTAP LOGIC to show leading Image & Data on homescreen
+3) inside home_page.dart ListView.builder
+  - CatalogModel.item Data inside ItemWidget() Structure
+  - Call catalog.dart using ListView.builder returing ItemWidget(item: CatalogModel.item[index])
+  - Call ItemWidget(item: CatalogModel.item[index])  showing items of CatalogModel in ListView/Structure
+   of ItemWidget()/item_widget.dart.

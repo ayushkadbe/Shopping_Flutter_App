@@ -4,7 +4,6 @@ import 'package:myapp/pages/login_page.dart';
 import 'package:myapp/utils/routes.dart';
 import 'package:myapp/widgets/theme.dart';
 import 'pages/home_page.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:device_preview/device_preview.dart';
 
 void main() => runApp(
@@ -26,7 +25,7 @@ class MyApp extends StatelessWidget {
       themeMode: ThemeMode.light,
       theme: MyTheme.lightTheme(context),
       darkTheme: MyTheme.darkTheme(context),
-      
+
       debugShowCheckedModeBanner: false,
 
       //ROUTES: {Map<String, Widget Function(BuildContext)> routes = const <String, WidgetBuilder>{}}
