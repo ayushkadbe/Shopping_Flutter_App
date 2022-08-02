@@ -20,7 +20,8 @@ NOTE: catalog.dart contains DATA ITEMS (id, name, image source, color)
 METHOD 2:
 Step 1)
 Step 2)
-Step 3) In home_page.dart
+Step 3) 
+Step 4) In home_page.dart
   - create a initState() method
   - create a loadData() method to fetch data from JSON file in assets/files/catalog.json 
   - loadData(
@@ -31,7 +32,7 @@ Step 3) In home_page.dart
   )
   
 
-Step 3) In Catalog.dart 
+Step 5) In Catalog.dart 
     we need to map the decodedData of catalog.json
     How to represent data of catalog using Catalog.json files
   - create a factory Constructor & tell it that Data is comming from Catalog.json & then create Objects according to it.
@@ -39,7 +40,7 @@ Step 3) In Catalog.dart
   - i.e CREATE A DECODING DATA CONSTRUCTOR: String to Map
   - also CREATE A ENCODING DATA CONSTRUCTOR: Map to String
   
-Step 4) Now in loadData() in home_page.dart
+Step 6) Now in loadData() in home_page.dart
   - get List of mapped Items decoded in Catalog.dart
   - in catalog.dart , catalog.item is also a LIST of item static final List<Item> item = {}
   - await delay
