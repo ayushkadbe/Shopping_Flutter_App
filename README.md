@@ -1,6 +1,6 @@
 # myapp
 
-myapp is A CATALOG APP showing List of Products on HomeScreen using ListView & ListTile taking data from local Catalog.json file
+myapp is A LISTVIEW CATALOG APP showing List of Products on HomeScreen using ListView & ListTile taking data from local Catalog.json file
 
 ## Getting Started
 
