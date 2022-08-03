@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:myapp/models/catalog.dart';
-import 'package:myapp/widgets/item_widget.dart';
 import '../widgets/drawer.dart';
 import 'dart:convert';
 class HomePage extends StatefulWidget {
@@ -26,7 +25,7 @@ class _HomePageState extends State<HomePage> {
   
   //method to fetch data from json files
   loadData()async {
-    await Future.delayed(Duration(seconds: 1));
+    await Future.delayed(const Duration(seconds: 1));
     //rootBundle to fetch DATA In string, takes time so await & store in catalogJson
     final catalogJson = await rootBundle.loadString("assets/files/catalog.json");
     //Json decoder(string to map) and encoder
@@ -58,21 +57,54 @@ class _HomePageState extends State<HomePage> {
     //listview builder gives recylerView for list, it renders other items of list only on scrolling
       body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: (CatalogModel.items != null && CatalogModel.items.isNotEmpty)? ListView.builder(
-          //what item to display
-          itemCount: CatalogModel.items.length,
-          //how to display
+        child: (CatalogModel.items.isNotEmpty)?
+        //GRIDVIEW
+        GridView.builder(
+          //how many grids in a row
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
           itemBuilder: (context, index){
-            return ItemWidget(
-              item: CatalogModel.items[index],
+            final item = CatalogModel.items[index];
+
+            return Card(
+              clipBehavior: Clip.antiAlias,
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+              //GRIDTILE
+              child: GridTile(
+                //HEADER
+                header: Container(
+                  child: Text(item.name, style: const TextStyle(color: Colors.white),),
+                  padding: const EdgeInsets.all(12),
+                  decoration: const BoxDecoration(
+                    color: Colors.blue,
+                  ),
+                ),
+
+                child: Image.network(
+                  item.image,                  
+                ),
+
+                //FOOTER
+                footer: Container(
+                  child: Text(item.price.toString(), style: const TextStyle(color: Colors.white),),
+                  padding: const EdgeInsets.all(12),
+                  decoration: const BoxDecoration(
+                    color: Colors.black,
+                  ),
+                ),
+            
+              ),
             );
+
           },
+          itemCount: CatalogModel.items.length,
+          
+        )
           //show progress bar on checking while conditional statement on line 60
-        ): const Center(
+        : const Center(
           child: CircularProgressIndicator(),
         )
       ),
-      drawer: MyDrawer(),
+      drawer: const MyDrawer(),
     );
   }
 }
