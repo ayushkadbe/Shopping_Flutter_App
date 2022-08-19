@@ -1,0 +1,69 @@
+How to get Data for ItemWidget to display in home_page.dart ?
+1. Create a File with data e.x catalog.dart
+2. Create a local JSON file & add it to app
+3. Have a Networking, backend or API keeping the same data format
+
+METHOD 1:
+NOTE: catalog.dart contains DATA ITEMS (id, name, image source, color)
+      item_widget.dart contains UI CODE fetching data from catalog.dart
+1) Create catalog.dart (contain DataModel & DataModel structuring)
+2) Create ItemWidget() inside lib/widgets/
+  -create object of class Item
+  -create constructor of class object
+  -create ListTile wrapped in Card with ONTAP LOGIC to show leading Image & Data on homescreen
+3) inside home_page.dart ListView.builder
+  - CatalogModel.item Data inside ItemWidget() Structure
+  - Call catalog.dart using ListView.builder returing ItemWidget(item: CatalogModel.item[index])
+  - Call ItemWidget(item: CatalogModel.item[index])  showing items of CatalogModel in ListView/Structure
+   of ItemWidget()/item_widget.dart.
+
+METHOD 2:
+Step 1)
+Step 2)
+Step 3) 
+Step 4) In home_page.dart
+  - create a initState() method
+  - create a loadData() method to fetch data from JSON file in assets/files/catalog.json 
+  - loadData(
+     Json to String convert
+     String to Map decode using dart:convert library
+     decodedData(in map) = jsonDecode(catalog);
+     productData = decodedData["products"];
+  )
+  
+
+Step 5) In Catalog.dart 
+    we need to map the decodedData of catalog.json
+    How to represent data of catalog using Catalog.json files
+  - create a factory Constructor & tell it that Data is comming from Catalog.json & then create Objects according to it.
+  - Item is already is constructor > we are creating it's named constructor using .
+  - i.e CREATE A DECODING DATA CONSTRUCTOR: String to Map
+  - also CREATE A ENCODING DATA CONSTRUCTOR: Map to String
+  
+Step 6) Now in loadData() in home_page.dart
+  - get List of mapped Items decoded in Catalog.dart
+  - in catalog.dart , catalog.item is also a LIST of item static final List<Item> item = {}
+  - await delay
+
+  -check in ListView line 60 and progress bar
+
+
+HOMEPAGE ALGO:-
+
+home_widgets
+ /catalog_header.dart
+ /catalog_image.dart
+ /catalog_list.dart
+
+ //HEADER widget is called
+ //CatalogList shows the items fetched using CatalogItem constructor in the ListView.builder  
+ //Get CatalogItem for CatalogList using a CatalogItems constructor
+ //CatalogImage: Returns Image from Image.network
+
+ ROUTING:
+ 
+ * Add onTap() property on ListView.builder of catalog_list.dart to NAVIGATE
+ from Catalog.item of HomePage to ProductDetails Page of item of that catalog.
+
+flutter run --no-sound-null-safety
+flutter run --web-renderer html
