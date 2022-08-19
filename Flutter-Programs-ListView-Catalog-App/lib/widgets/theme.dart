@@ -26,7 +26,7 @@ class MyTheme{
   static ThemeData darkTheme(BuildContext context) => ThemeData(
     fontFamily: GoogleFonts.poppins().fontFamily,
     cardColor: Color.fromARGB(255, 56, 56, 56),
-    canvasColor: darkColor,
+    canvasColor: Color.fromARGB(255, 56, 56, 56),
     textButtonTheme: TextButtonThemeData(
       style: TextButton.styleFrom(primary: Colors.lightBlue),
     ),
