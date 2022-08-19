@@ -55,13 +55,13 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context){
     //create a list to check what
     return Scaffold(
-      backgroundColor: MyTheme.creamColor,
+      backgroundColor: Theme.of(context).cardColor,
       //cream color so that WHITE COLOR OF CARD can be HIGHLIGHTED
 
       //CART BUTTON on homepage floating
       floatingActionButton: FloatingActionButton(
         onPressed: () => Navigator.pushNamed(context, MyRoutes.cartRoute), 
-        backgroundColor: MyTheme.darkBlue,
+        
         child: const Icon(CupertinoIcons.cart),
       ),
       

@@ -67,7 +67,7 @@ class CatalogItem extends StatelessWidget{
                   ElevatedButton(
                     onPressed: (){},
                     style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(MyTheme.darkBlue),
+                      // backgroundColor: MaterialStateProperty.all(MyTheme.darkBlue),
                     shape: MaterialStateProperty.all(const StadiumBorder()), //rounder shape of button
                     ),
                     child: "Add to cart".text.make(),
