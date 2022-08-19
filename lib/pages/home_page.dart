@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:myapp/models/catalog.dart';
-import '../widgets/drawer.dart';
+import 'package:myapp/widgets/theme.dart';
 import 'dart:convert';
+// ignore: import_of_legacy_library_into_null_safe
+import 'package:velocity_x/velocity_x.dart';
+
+import '../widgets/home_widgets/catalog_header.dart';
+import '../widgets/home_widgets/catalog_list.dart';
+
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -47,64 +53,34 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context){
     //create a list to check what
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Catalog App",
-        style: TextStyle(
-          color: Colors.black,
-        ),),
-      ),
+      backgroundColor: MyTheme.creamColor,
+      //cream color so that WHITE COLOR OF CARD can be HIGHLIGHTED
+      
 
     //listview builder gives recylerView for list, it renders other items of list only on scrolling
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: (CatalogModel.items.isNotEmpty)?
-        //GRIDVIEW
-        GridView.builder(
-          //how many grids in a row
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
-          itemBuilder: (context, index){
-            final item = CatalogModel.items[index];
-
-            return Card(
-              clipBehavior: Clip.antiAlias,
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-              //GRIDTILE
-              child: GridTile(
-                //HEADER
-                header: Container(
-                  child: Text(item.name, style: const TextStyle(color: Colors.white),),
-                  padding: const EdgeInsets.all(12),
-                  decoration: const BoxDecoration(
-                    color: Colors.blue,
-                  ),
-                ),
-
-                child: Image.network(
-                  item.image,                  
-                ),
-
-                //FOOTER
-                footer: Container(
-                  child: Text(item.price.toString(), style: const TextStyle(color: Colors.white),),
-                  padding: const EdgeInsets.all(12),
-                  decoration: const BoxDecoration(
-                    color: Colors.black,
-                  ),
-                ),
-            
-              ),
-            );
-
-          },
-          itemCount: CatalogModel.items.length,
-          
-        )
-          //show progress bar on checking while conditional statement on line 60
-        : const Center(
-          child: CircularProgressIndicator(),
-        )
+      body: SafeArea(
+        child: Container(
+          padding: Vx.m32,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              //Header
+              const CatalogHeader(), //import the HEADER FROM catalog_header.dart Class
+              //Get ITEM LIST from CatalogModel.items after a non null CHECK
+              if(CatalogModel.items.isNotEmpty)
+                const CatalogList().expand() //CatalogList class from catalog_list.dart class
+              else
+                Center(child: const CircularProgressIndicator().centered().expand(),)
+            ],
+          ),
+        ),
       ),
-      drawer: const MyDrawer(),
     );
   }
 }
+
+
+
+
+
+

@@ -1,44 +1,20 @@
 {
     "products": [
         {
-            "id": 1,
-            "name": "iPhone 12 Pro",
-            "desc": "Apple iPhone 12th generation",
-            "price": 999,
-            "color": "#33505a",
-            "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-12-pro-blue-hero?wid=940&hei=1112&fmt=png-alpha&qlt=80&.v=1604021661000"
-        },
-        {
-            "id": 2,
-            "name": "Pixel 5",
-            "desc": "Google Pixel phone 5th generation",
-            "price": 699,
-            "color": "#00ac51",
-            "image": "https://www.telstra.com.au/content/dam/tcom/lego/2020/plans-devices/mobiles/google-pixel-5/shared-google-pixel-5-black-05-900x1200.png"
-        },
-        {
-            "id": 3,
-            "name": "M1 Macbook Air",
-            "desc": "Apple Macbook air with apple silicon",
-            "price": 1099,
-            "color": "#e0bfae",
-            "image": "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP825/macbookair.png"
-        },
-        {
-            "id": 4,
-            "name": "Playstation 5",
-            "desc": "Sony Playstation 5th generation",
-            "price": 500,
-            "color": "#544ee4",
-            "image": "https://i1.wp.com/freepngimages.com/wp-content/uploads/2020/07/Playstation-5-games-console-transparent-background-png-image.png?fit=1000%2C1000"
-        },
-        {
             "id": 5,
-            "name": "Airpods Pro",
-            "desc": "Apple Aipods Pro 1st generation",
+            "name": "Samsung Galaxy M53 5G ",
+            "desc": "Mystique Green, 6GB, 128GB Storage",
             "price": 200,
             "color": "#e3e4e9",
-            "image": "https://crdms.images.consumerreports.org/c_lfill,w_598/prod/products/cr/models/400116-wireless-portable-headphones-apple-airpods-pro-10009323.png"
+            "image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiFvCfN3Zr8AN1gY4HTEcaXNp4P7yXAtFzX4Gh3qYZay0TJvGpM2NFdiHFSFY02HG47CzTg9l-38cZhnGfeQGUmZbhKYF9DIN6orRIXCh__m8TePPTTVKIarh7SoHAUgCV_Geq10oi5N1Qj5qh3mnoEztP-NadRBuwBq6rMeW0CcF_5BVrZz2R-xGfxHg/s1500/810Rscvmd4L._SL1500_.jpg"
+        },
+        {
+            "id": 7,
+            "name": "OnePlus Nord 2T 5G ",
+            "desc": "Jade Fog, 12GB RAM, 256GB Storage",
+            "price": 1299,
+            "color": "#1c1c1c",
+            "image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjDXSn9h4DA0ncg157xuYsjxoMBxZH4eJATFIUN61JSdTQB8XsfM7RP2A-hncYVWD0fnWP4nj0-4FAf_cxgj5yMsbYNSmi4Ctt2oWSeFt6idm9MlMHb6zDGEulgd3JsGyOwR4JQJhIVpYk9X1Xv6UlR_o7gIT_LwfN-W5acuxoATW2VP6WNH_cqZ45C5Q/s1500/61ahn9N38zL._SL1500_.jpg"
         },
         {
             "id": 6,
@@ -46,23 +22,47 @@
             "desc": "Apple iPad Pro 2020 edition",
             "price": 799,
             "color": "#f73984",
-            "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/ipad-pro-12-select-wifi-silver-202003_FMT_WHH?wid=940&hei=1112&fmt=png-alpha&qlt=80&.v=1583551131102"
+            "image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjvXnV0Yp2zPT3K61_-Rj_tKbM-ZybcCLArNPPqpEQn_ZBHNF7H9xW-sVKidURgRbR_VNtgeFUWu3QpwkuAo3VWXqq7Ug4jO7U7hB04kBAzh0Tbgb3KZmSuTsy4Q17_5lsd3ZG58FYFTK7-oBeHQMT7N6nnPCO2DLIHJ8_ceIfmwnYkpcvd9D-lZghzjw/s1112/ipad-pro-12-select-wifi-silver-202003_FMT_WHH.png"
+        },  
+        {
+            "id": 1,
+            "name": "iPhone 12 Pro",
+            "desc": "Apple iPhone 12th generation",
+            "price": 999,
+            "color": "#33505a",
+            "image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhiWezM2hbgmdKBeM0byyPM4PwdMArtXq1gxTMnzHDZPK_NNkdQVbNMunYx4IXPSxPSgXCCgzfEo__Hh_uIi6YAnuJ5dBbVFQPIVu6Ur779BUBbFItvIqLiHDDRuZr5ei12cuEKtbw80_svB0OYmowLmFeS1mOi9lbwVSkqHhyYqSDbyMBwCwQuyYnhKQ/s1112/iphone-12-pro-blue-hero.png"
         },
         {
-            "id": 7,
-            "name": "Galaxy S21 Ultra",
-            "desc": "Samsung Galaxy S21 Ultra 2021 edition",
-            "price": 1299,
-            "color": "#1c1c1c",
-            "image": "https://lh3.googleusercontent.com/qRQPjHrhRVIs-xnfNSyiPXOH2vH97ylMacgbTKebqJtRfNH3LlYo8pN-5igsLDWUH62tGl5zNpTsl5xd8SprzGmXoCEmWFOi2-2cQVGS-r3PaRXHt62DmJHq-jrYX0UQvWZ9BA=s800-c"
+            "id": 2,
+            "name": "Pixel 5",
+            "desc": "Google Pixel phone 5th generation",
+            "price": 699,
+            "color": "#00ac51",
+            "image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjGiKiS-ZAwI5UgWGbwENl5siF60-zzuogOQ1lH2kiCWUThaBt0qmK-lHjvpDQ_KsM4WykU7-KpWfWJS1eXfzx0AKWmsFFgeq6erGOppCM7bW7Dozdus-hyIHwnBdxfmjoErrG_ns2BO2cPoxmj8GwjW3o1-J60654rr8fxWjS3re82bkcQtR-E4ePTOQ/s1500/81-fNmQqlLL._SL1500_.jpg"
+        },
+        {
+            "id": 3,
+            "name": "M1 Macbook Air",
+            "desc": "Apple Macbook air with apple silicon",
+            "price": 1099,
+            "color": "#e0bfae",
+            "image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjoz_990nvfdfLWZzjwB1zukOl84nr3o6a80xwambo94RMfJWWFZJ-DFTHSkikLIsz7HlAk7rUJ-SQS00HfpR7xcMVs49YDmPqlj3zreKx13M_16nD6cMx0UYA2PDvcZ8-gt-YhcqY373VB9oq6jZ6p_PU_jBleDNRHdkHDEJUOFkk-B42KfPohWcWSpQ/s1000/Apple-MGN63HNA-Laptops-491946461-i-1-1200Wx1200H.jpeg"
+        },
+        {
+            "id": 4,
+            "name": "Playstation 5",
+            "desc": "Sony Playstation 5th generation",
+            "price": 500,
+            "color": "#544ee4",
+            "image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgxJ_KxohTr4LU_7fKMwiHWZNgaVzZXJQxupw8ivDsXclPb1nF_Tatysn3rY09LDNQtiCmC89lAPd0IUK5OxOlwLTxiiSWCaJuuiOwjs2vZ6ZyYHkOog4SLeY6dVQ74VPpMnDUV6aN0WXhMEG5y9ASsSENbRBDQKb8Gv52RM0Yti3bh0Bzv3VMUL0Tjmg/s455/playstation5-digital-edition-console-825gb.jpg"
         },
         {
             "id": 8,
-            "name": "Galaxy S21",
-            "desc": "Samsung Galaxy S21 2021 edition",
+            "name": "iQOO 9T 5G",
+            "desc": "Legend, 8GB RAM, 128GB Storage",
             "price": 899,
             "color": "#7c95eb",
-            "image": "https://images.samsung.com/is/image/samsung/p6pim/za/galaxy-s21/gallery/za-clear-cover-galaxy-s21-5g-ef-qg991ttegww-363168624?$720_576_PNG$"
+            "image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjaSndzmf6X3PnrtUWuyCa2bt7paE0VlqjN6JpL-BgLHR9shmXaGrfsXBk35touMRK468GmHilgsPjyIaB0gUtLMD4VCLc4boOM-W961BZ6fiIey9Zls-bzU6G_-EVnak-WKGF4EhxNMLSgJnAsPdmLTLlEl2OGuRcUXI_EfNtffewG_Uo9RsPPsqt7zg/s1200/6157kr+aeaL._SL1200_.jpg"
         }
     ]
 }

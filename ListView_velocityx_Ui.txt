@@ -11,18 +11,11 @@ NOTE: catalog.dart contains DATA ITEMS (id, name, image source, color)
   -create object of class Item
   -create constructor of class object
   -create ListTile wrapped in Card with ONTAP LOGIC to show leading Image & Data on homescreen
-3) inside home_page.dart GridView.builder
-  - gridDeligate > for no. of rows
-  - itemBuilder:
-  - Card{
-      GridTile(
-        header: Container(),
-        child: Image.network(),
-        footer: Container(),
-      );
-    }
-  - itemCount: 
-  
+3) inside home_page.dart ListView.builder
+  - CatalogModel.item Data inside ItemWidget() Structure
+  - Call catalog.dart using ListView.builder returing ItemWidget(item: CatalogModel.item[index])
+  - Call ItemWidget(item: CatalogModel.item[index])  showing items of CatalogModel in ListView/Structure
+   of ItemWidget()/item_widget.dart.
 
 METHOD 2:
 Step 1)
@@ -53,3 +46,24 @@ Step 6) Now in loadData() in home_page.dart
   - await delay
 
   -check in ListView line 60 and progress bar
+
+
+HOMEPAGE ALGO:-
+
+home_widgets
+ /catalog_header.dart
+ /catalog_image.dart
+ /catalog_list.dart
+
+ //HEADER widget is called
+ //CatalogList shows the items fetched using CatalogItem constructor in the ListView.builder  
+ //Get CatalogItem for CatalogList using a CatalogItems constructor
+ //CatalogImage: Returns Image from Image.network
+
+ ROUTING:
+ 
+ * Add onTap() property on ListView.builder of catalog_list.dart to NAVIGATE
+ from Catalog.item of HomePage to ProductDetails Page of item of that catalog.
+
+
+flutter run --web-renderer html
