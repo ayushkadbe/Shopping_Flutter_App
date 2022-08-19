@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
       // locale: DevicePreview.locale(context),
       // builder: DevicePreview.appBuilder,
       //THEME
-      themeMode: ThemeMode.light,
+      themeMode: ThemeMode.dark,
       theme: MyTheme.lightTheme(context),
       darkTheme: MyTheme.darkTheme(context),
 

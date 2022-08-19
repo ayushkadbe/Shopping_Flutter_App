@@ -25,7 +25,7 @@ class MyTheme{
 
   static ThemeData darkTheme(BuildContext context) => ThemeData(
     fontFamily: GoogleFonts.poppins().fontFamily,
-    cardColor: darkColor,
+    cardColor: Color.fromARGB(255, 56, 56, 56),
     canvasColor: darkColor,
     textButtonTheme: TextButtonThemeData(
       style: TextButton.styleFrom(primary: Colors.lightBlue),
@@ -37,7 +37,7 @@ class MyTheme{
       backgroundColor: Colors.lightBlue,
     ),
     appBarTheme: const AppBarTheme(
-      color: Colors.black,
+      color: Color.fromARGB(255, 61, 61, 61),
       elevation: 0.0,
       iconTheme: IconThemeData(color: Colors.black),    
     ),
@@ -47,7 +47,7 @@ class MyTheme{
   static Color creamColor = Color(0xfff5f5f5);
   static Color darkColor = Color.fromARGB(0, 44, 43, 43);
   static Color lightBlue = Colors.lightBlue;
-  static Color darkBlue = Color.fromARGB(0, 0, 47, 255);
+  static Color darkBlue = Color.fromARGB(255, 56, 56, 56);
 
 
 }
