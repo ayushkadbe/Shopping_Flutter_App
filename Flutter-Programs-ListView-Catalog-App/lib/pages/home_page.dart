@@ -1,6 +1,8 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:myapp/models/catalog.dart';
+import 'package:myapp/utils/routes.dart';
 import 'package:myapp/widgets/theme.dart';
 import 'dart:convert';
 // ignore: import_of_legacy_library_into_null_safe
@@ -55,6 +57,13 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: MyTheme.creamColor,
       //cream color so that WHITE COLOR OF CARD can be HIGHLIGHTED
+
+      //CART BUTTON on homepage floating
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => Navigator.pushNamed(context, MyRoutes.cartRoute), 
+        backgroundColor: MyTheme.darkBlue,
+        child: const Icon(CupertinoIcons.cart),
+      ),
       
 
     //listview builder gives recylerView for list, it renders other items of list only on scrolling

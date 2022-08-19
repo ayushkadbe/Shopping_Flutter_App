@@ -31,8 +31,8 @@ class ProductDetails extends StatelessWidget {
                         backgroundColor: MaterialStateProperty.all(MyTheme.darkBlue),
                       shape: MaterialStateProperty.all(const StadiumBorder()), //rounder shape of button
                       ),
-                      child: "Buy".text.make(),
-                    ).wh(100,50)
+                      child: "Add to cart".text.make(),
+                    ).wh(120,50),
                   ],
                 ).p32(),
       ),
@@ -45,7 +45,7 @@ class ProductDetails extends StatelessWidget {
               child: Image.network(catalog.image)
             ),
             Expanded(              
-              child: Container(
+              child: SizedBox(
                 width: context.screenWidth,
                 child: Column(
                   children: [
@@ -54,6 +54,13 @@ class ProductDetails extends StatelessWidget {
                        //DESCIRIPTION in caption
                        catalog.desc.text.textStyle(context.captionStyle).make(),
                 10.heightBox, 
+                      "This is a dummy text, for a dummy phone. Don't what I am typing, so just ignore it and see how elegant is design of the app."
+                      .text
+                      .textStyle(context.captionStyle)
+                      .make()
+                      .p20()  
+                      
+
                   ],
                 ).py64(),
               ),
