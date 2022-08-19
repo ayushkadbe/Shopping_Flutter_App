@@ -18,6 +18,24 @@ class ProductDetails extends StatelessWidget {
     return Scaffold(
       backgroundColor: MyTheme.creamColor,
       appBar: AppBar(), //for backbutton
+      bottomNavigationBar: Container(
+        color: Colors.white,
+        child: ButtonBar(
+                  alignment: MainAxisAlignment.spaceBetween,
+                  buttonPadding: EdgeInsets.zero,
+                  children: [
+                    "\$${catalog.price}".text.bold.xl4.make(),
+                    ElevatedButton(
+                      onPressed: (){},
+                      style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.all(MyTheme.darkBlue),
+                      shape: MaterialStateProperty.all(const StadiumBorder()), //rounder shape of button
+                      ),
+                      child: "Buy".text.make(),
+                    ).wh(100,50)
+                  ],
+                ).p32(),
+      ),
 
       body: SafeArea(        
         child: Column(
@@ -25,6 +43,20 @@ class ProductDetails extends StatelessWidget {
             Hero( //give animation
               tag: Key(catalog.id.toString()),
               child: Image.network(catalog.image)
+            ),
+            Expanded(              
+              child: Container(
+                width: context.screenWidth,
+                child: Column(
+                  children: [
+                    //NAME
+                     catalog.name.text.lg.color(MyTheme.darkBlue).bold.make(),
+                       //DESCIRIPTION in caption
+                       catalog.desc.text.textStyle(context.captionStyle).make(),
+                10.heightBox, 
+                  ],
+                ).py64(),
+              ),
             ),
           ],
         ).p16(),
