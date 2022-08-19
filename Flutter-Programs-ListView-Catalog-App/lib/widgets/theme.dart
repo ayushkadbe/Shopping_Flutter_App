@@ -2,9 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class MyTheme{
+  MyTheme(Color canvasColor);
+
   static ThemeData lightTheme(BuildContext context) => ThemeData(
      primaryColor: Color.fromARGB(255, 0, 0, 0),  //primaryColor to manually specify colors
     //if texttheme default text color doesn't work out    
+    primaryColorDark: Color.fromARGB(255, 255, 255, 255),
     textTheme: const TextTheme(
       headline1: TextStyle(color: Color.fromARGB(255, 0, 0, 0)),            
     ),
@@ -29,15 +32,16 @@ class MyTheme{
   );
 
   static ThemeData darkTheme(BuildContext context) => ThemeData(
-    primaryColor: Colors.white,  //primaryColor to manually specify colors
+    primaryColor: Colors.white,  //primaryColor/ accentColor to manually specify colors
     //if texttheme default text color doesn't work out    
+    primaryColorDark: Colors.black,
     textTheme: const TextTheme(
       headline1: TextStyle(color: Colors.white),            
     ),
-
+    brightness: Brightness.dark,
     fontFamily: GoogleFonts.poppins().fontFamily,
-    cardColor: Color.fromARGB(255, 39, 39, 39),
-    canvasColor: Color.fromARGB(255, 39, 39, 39),
+    cardColor: Color.fromARGB(255, 31, 35, 46),
+    canvasColor: Color.fromARGB(255, 44, 43, 43),
     textButtonTheme: TextButtonThemeData(
       style: TextButton.styleFrom(primary: Colors.lightBlue),
     ),
@@ -48,9 +52,9 @@ class MyTheme{
       backgroundColor: Colors.lightBlue,
     ),
     appBarTheme: const AppBarTheme(
-      color: Color.fromARGB(255, 61, 61, 61),
+      color: Color.fromARGB(255, 31, 35, 46),
       elevation: 0.0,
-      iconTheme: IconThemeData(color: Colors.black),    
+      iconTheme: IconThemeData(color: Colors.white),    
     ),
   );
 

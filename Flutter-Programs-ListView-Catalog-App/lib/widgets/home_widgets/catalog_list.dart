@@ -54,7 +54,7 @@ class CatalogItem extends StatelessWidget{
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               //NAME
-              catalog.name.text.lg.color(MyTheme.darkBlue).bold.make(),
+              catalog.name.text.lg.color(context.primaryColor).bold.make(),
               //DESCIRIPTION in caption
               catalog.desc.text.textStyle(context.captionStyle).make(),
               10.heightBox,
@@ -78,7 +78,7 @@ class CatalogItem extends StatelessWidget{
           ))
         ],
       )
-    ).white.rounded.square(150).make().py16();
+    ).color(context.canvasColor).rounded.square(150).make().py16();
     //py16 is padding of 16 between ROW ITEM , which creates a CARD with roundedLg for rounded corners
   }
 }

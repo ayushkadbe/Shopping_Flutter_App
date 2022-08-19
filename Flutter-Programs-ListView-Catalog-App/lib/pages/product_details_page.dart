@@ -16,7 +16,7 @@ class ProductDetails extends StatelessWidget {
   @override 
   Widget build(BuildContext context){
     return Scaffold(
-      backgroundColor: MyTheme.creamColor,
+      backgroundColor: context.cardColor,
       appBar: AppBar(), //for backbutton
       bottomNavigationBar: Container(
         color: Colors.white,
@@ -24,14 +24,14 @@ class ProductDetails extends StatelessWidget {
                   alignment: MainAxisAlignment.spaceBetween,
                   buttonPadding: EdgeInsets.zero,
                   children: [
-                    "\$${catalog.price}".text.bold.xl4.make(),
+                    "\$${catalog.price}".text.bold.color(context.canvasColor).xl4.make(),
                     ElevatedButton(
                       onPressed: (){},
                       style: ButtonStyle(
                       shape: MaterialStateProperty.all(const StadiumBorder()), //rounder shape of button
                       ),
-                      child: "Add to cart".text.make(),
-                    ).wh(120,50),
+                      child: "Add to cart".text.color(context.primaryColor).make(),
+                    ).wh(120,40),
                   ],
                 ).p32(),
       ),
@@ -44,12 +44,13 @@ class ProductDetails extends StatelessWidget {
               child: Image.network(catalog.image)
             ),
             Expanded(              
-              child: SizedBox(
+              child: Container(
+                color: context.canvasColor,
                 width: context.screenWidth,
                 child: Column(
                   children: [
                     //NAME
-                     catalog.name.text.lg.color(MyTheme.darkBlue).bold.make(),
+                     catalog.name.text.lg.color(context.primaryColor).bold.make(),
                        //DESCIRIPTION in caption
                        catalog.desc.text.textStyle(context.captionStyle).make(),
                 10.heightBox, 
