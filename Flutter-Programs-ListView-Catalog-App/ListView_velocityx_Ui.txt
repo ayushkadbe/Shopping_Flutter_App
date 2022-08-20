@@ -47,9 +47,15 @@ Step 6) Now in loadData() in home_page.dart
 
   -check in ListView line 60 and progress bar
 
+CART_PAGE ALGO: -
+=================
+cart page consists of a stateless widget with a column
+* having CartTotal() widget for total price & "Buy button"
+* having CartList() widget for showing Items list as a placeholder in column
+* Need a CartModel(Item & its components Structure) to fetch data items to be shown in Cart list
 
 HOMEPAGE ALGO:-
-
+===============
 home_widgets
  /catalog_header.dart
  /catalog_image.dart
@@ -61,9 +67,10 @@ home_widgets
  //CatalogImage: Returns Image from Image.network
 
  ROUTING:
- 
+ ========
  * Add onTap() property on ListView.builder of catalog_list.dart to NAVIGATE
  from Catalog.item of HomePage to ProductDetails Page of item of that catalog.
 
 flutter run --no-sound-null-safety
 flutter run --web-renderer html
+flutter run --no-sound-null-safety --web-renderer html

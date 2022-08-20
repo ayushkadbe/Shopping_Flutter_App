@@ -4,10 +4,10 @@ class CatalogModel{
 
   //GET ITEM BY ID METHOD
   //custom method =          get firstWhere (element)  => whose element.id == my id
-  static Item getById(int id) => items.firstWhere((element) => element.id == id, orElse: null);
+  Item getById(int id) => items.firstWhere((element) => element.id == id, orElse: null);
 
   //GET ITEM BY POSITION
-  static Item getByPosition(int pos) => items[pos];
+  Item getByPosition(int pos) => items[pos];
 }
 
 //Other file contains Structuring of Data Model
