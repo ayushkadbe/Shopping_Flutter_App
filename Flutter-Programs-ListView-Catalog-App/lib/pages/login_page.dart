@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/utils/routes.dart';
+import 'package:myapp/widgets/theme.dart';
+
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -32,7 +34,7 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: Colors.white,
+      color: Theme.of(context).cardColor,
       //child: Center(
       /*To make Column Page Elements responsive on both Large Screens as well as small
          screen wrap Column in Scroll.

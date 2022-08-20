@@ -41,7 +41,7 @@ class MyTheme{
     brightness: Brightness.dark,
     fontFamily: GoogleFonts.poppins().fontFamily,
     cardColor: Color.fromARGB(255, 31, 35, 46),
-    canvasColor: Color.fromARGB(255, 44, 43, 43),
+    canvasColor: Color.fromARGB(255, 34, 33, 33),
     textButtonTheme: TextButtonThemeData(
       style: TextButton.styleFrom(primary: Colors.lightBlue),
     ),
@@ -60,7 +60,7 @@ class MyTheme{
 
   //COLORS:
   static Color creamColor = Color(0xfff5f5f5);
-  static Color darkColor = Color.fromARGB(255, 39, 39, 39);
+  static Color darkColor = Color.fromARGB(255, 34, 33, 33);
   static Color lightBlue = Colors.lightBlue;
   static Color darkBlue = Color.fromARGB(255, 56, 56, 56);
 
