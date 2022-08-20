@@ -23,6 +23,7 @@ class MyTheme{
     ),
      floatingActionButtonTheme: const FloatingActionButtonThemeData(
       backgroundColor: Color.fromARGB(255, 76, 46, 228),
+      foregroundColor: Colors.white,
     ),
     appBarTheme: const AppBarTheme(
       color: Colors.white,
@@ -50,6 +51,7 @@ class MyTheme{
     ),
     floatingActionButtonTheme: const FloatingActionButtonThemeData(
       backgroundColor: Colors.lightBlue,
+      foregroundColor: Colors.white,
     ),
     appBarTheme: const AppBarTheme(
       color: Color.fromARGB(255, 31, 35, 46),

@@ -1,6 +1,13 @@
 //ONE file contains Model of Items
 class CatalogModel{
   static List<Item> items=[];
+
+  //GET ITEM BY ID METHOD
+  //custom method =          get firstWhere (element)  => whose element.id == my id
+  static Item getById(int id) => items.firstWhere((element) => element.id == id, orElse: null);
+
+  //GET ITEM BY POSITION
+  static Item getByPosition(int pos) => items[pos];
 }
 
 //Other file contains Structuring of Data Model
