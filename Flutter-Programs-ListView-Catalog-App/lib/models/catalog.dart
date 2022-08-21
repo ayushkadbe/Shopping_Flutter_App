@@ -1,5 +1,17 @@
 //ONE file contains Model of Items
 class CatalogModel{
+   //For AddToCart Method:--------------------
+
+  //CREATE A SINGLETON CLASS
+  static final catalogModel = CatalogModel._internal();
+
+  CatalogModel._internal();
+
+  //Everytime CartModel is Requested => Provide this cartModel(); so only once object is created/only one model is created & retrieved
+  factory CatalogModel() => catalogModel;
+
+
+  //------------------------------
   static List<Item> items=[];
 
   //GET ITEM BY ID METHOD

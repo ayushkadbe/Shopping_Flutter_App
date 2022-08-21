@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/models/cart.dart';
 import 'package:myapp/models/catalog.dart';
 import 'package:myapp/pages/product_details_page.dart';
 import 'package:myapp/widgets/theme.dart';
 // ignore: import_of_legacy_library_into_null_safe
 import 'package:velocity_x/velocity_x.dart';
 
+import 'add_to_cart.dart';
 import 'catalog_image.dart';
 
 
@@ -65,14 +67,7 @@ class CatalogItem extends StatelessWidget{
                 buttonPadding: EdgeInsets.zero,
                 children: [
                   "\$${catalog.price}".text.bold.xl.make(),
-                  ElevatedButton(
-                    onPressed: (){},
-                    style: ButtonStyle(
-                      // backgroundColor: MaterialStateProperty.all(MyTheme.darkBlue),
-                    shape: MaterialStateProperty.all(const StadiumBorder()), //rounder shape of button
-                    ),
-                    child: "Add to cart".text.make(),
-                  )
+                  AddToCart(catalog: catalog),  //pass catalog to add widget
                 ],
               ).pOnly(right: 8),
             ],
@@ -83,3 +78,4 @@ class CatalogItem extends StatelessWidget{
     //py16 is padding of 16 between ROW ITEM , which creates a CARD with roundedLg for rounded corners
   }
 }
+

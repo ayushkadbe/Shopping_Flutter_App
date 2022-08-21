@@ -3,8 +3,17 @@ import 'package:myapp/models/catalog.dart';
 import 'package:myapp/pages/cart_page.dart';
 
 class CartModel{
+  //For AddToCart Method:--------------------
 
-  //CATALOG MODEL data flow ALGORITHM
+  //CREATE A SINGLETON CLASS
+  static final cartModel = CartModel._internal();
+
+  CartModel._internal();
+
+  //Everytime CartModel is Requested => Provide this cartModel(); so only once object is created/only one model is created & retrieved
+  factory CartModel() => cartModel;
+
+  //CATALOG MODEL data flow ALGORITHM: -----------------
 
   //Catalog Field from catalog.dart model
   //i.e CatalogModel _CATALOG OBJECT

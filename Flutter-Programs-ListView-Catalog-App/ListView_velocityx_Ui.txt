@@ -52,7 +52,19 @@ CART_PAGE ALGO: -
 cart page consists of a stateless widget with a column
 * having CartTotal() widget for total price & "Buy button"
 * having CartList() widget for showing Items list as a placeholder in column
-* Need a CartModel(Item & its components Structure) to fetch data items to be shown in Cart list
+* Need a CartModel(Item & its components Structure) to fetch data items to be shown in Cart listod
+
+ADD TO CART ALGO:
+=================
+* Twik catalog_list.dart add add AddToCart Widget: which shows done button/number of product on product list
+* Create new home widget AddToCart.dart move addToCart from Catalog_List.DART to this widget. call it in catalog_list
+* Cart page
+* CartModel
+* AddToCart widget in Catalog_List.dart
+* Create a Singleton class(Object is created only once & Retrieved Again & Again)
+  so that everytime, new model is NOT created or less everytime initial value of cart item will be zero.
+  -> Singleton Class cartModel in cart.dart
+  -> Singleton Class catalogModel in catalog.dart
 
 HOMEPAGE ALGO:-
 ===============

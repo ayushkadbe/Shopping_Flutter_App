@@ -3,6 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
 
+import '../models/cart.dart';
+
 
 class CartPage extends StatelessWidget {
   const CartPage({Key? key}) : super(key: key);
@@ -35,12 +37,14 @@ class _CartTotal extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final _cart = CartModel();
     return SizedBox(
       height: 200,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [        
-        "\$999".text.xl5.color(Theme.of(context).primaryColor).make(),
+        children: [
+          //totalPrice method called using CLASS OBJECT _card        
+        "\$${_cart.totalPrice}".text.xl5.color(Theme.of(context).primaryColor).make(),
         30.widthBox,
         ElevatedButton(
           onPressed: () {},
@@ -60,17 +64,26 @@ class _CartList extends StatefulWidget {
 }
 
 class __CartListState extends State<_CartList> {
+  //create a METHOD calling CartModel CLASS
+  final _cart = CartModel();
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      itemCount: 5,
+    return _cart.items.isEmpty?"Add Items to Cart to show!".text.xl3.makeCentered(): ListView.builder(
+      itemCount: _cart.items.length,
       itemBuilder: (context, index) => ListTile(
         leading: const Icon(Icons.done),
         trailing: IconButton(
+          //remove items from cart
           icon: const Icon(Icons.remove_circle_outline),
-          onPressed: (){},
+          onPressed: (){
+            _cart.remove(_cart.items[index]);
+            setState(() {
+              
+            });
+          },
         ),
-        title: "Item 1".text.make(),
+        //item name from index called using CLASS OBJECT _card
+        title: _cart.items[index].name.text.make(),
       ),
     );
   }
