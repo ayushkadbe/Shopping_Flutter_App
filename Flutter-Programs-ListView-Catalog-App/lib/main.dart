@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/core/store.dart';
 import 'package:myapp/pages/login_page.dart';
 import 'package:myapp/utils/routes.dart';
 import 'package:myapp/widgets/theme.dart';
 import 'pages/cart_page.dart';
 import 'pages/home_page.dart';
+// ignore: import_of_legacy_library_into_null_safe
+import 'package:velocity_x/velocity_x.dart';
 //import 'package:device_preview/device_preview.dart';
 
-void main() => runApp( MyApp()
+//wrapping in VxState helps us to manage state of app
+void main() => runApp( VxState(store: MyStore(),
+child: MyApp())
   // DevicePreview(
   //   enabled: !kReleaseMode,
   //   builder: (context) => MyApp(), // Wrap your app for device preview

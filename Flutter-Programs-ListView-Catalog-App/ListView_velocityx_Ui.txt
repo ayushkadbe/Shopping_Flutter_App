@@ -44,8 +44,14 @@ Step 6) Now in loadData() in home_page.dart
   - get List of mapped Items decoded in Catalog.dart
   - in catalog.dart , catalog.item is also a LIST of item static final List<Item> item = {}
   - await delay
-
   -check in ListView line 60 and progress bar
+ 
+CLEAN CODE:
+===========
+* Remove Singletons in cart & catalog model
+* Make Stateful of pages to stateless
+  in cart_page.dart & add_to_cart.dart;
+* Remove unused imports.
 
 CART_PAGE ALGO: -
 =================
