@@ -11,7 +11,7 @@ import 'package:velocity_x/velocity_x.dart';
 
 //wrapping in VxState helps us to manage state of app
 void main() => runApp( VxState(store: MyStore(),
-child: MyApp())
+child: const MyApp())
   // DevicePreview(
   //   enabled: !kReleaseMode,
   //   builder: (context) => MyApp(), // Wrap your app for device preview
@@ -19,6 +19,8 @@ child: MyApp())
 );
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

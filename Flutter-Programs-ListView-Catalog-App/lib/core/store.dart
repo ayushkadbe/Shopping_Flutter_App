@@ -18,3 +18,6 @@ class MyStore extends VxStore{
 
 
 }
+
+//USE  final CartModel _cart = (VxState.store as MyStore).cart; where you NEED CatalogModel or CartModel
+//    final CatalogModel _catalog = (VxState.store as MyStore).catalog;

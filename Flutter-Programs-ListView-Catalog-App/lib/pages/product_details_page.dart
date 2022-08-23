@@ -5,7 +5,6 @@ import 'package:myapp/widgets/home_widgets/add_to_cart.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 import '../models/catalog.dart';
-import '../widgets/theme.dart';
 
 class ProductDetails extends StatelessWidget {
   //This is NAVIGATION to PRODUCT DETAILS PAGE.

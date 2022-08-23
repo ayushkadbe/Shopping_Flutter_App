@@ -5,9 +5,9 @@ class MyTheme{
   MyTheme(Color canvasColor);
 
   static ThemeData lightTheme(BuildContext context) => ThemeData(
-     primaryColor: Color.fromARGB(255, 0, 0, 0),  //primaryColor to manually specify colors
+     primaryColor: const Color.fromARGB(255, 0, 0, 0),  //primaryColor to manually specify colors
     //if texttheme default text color doesn't work out    
-    primaryColorDark: Color.fromARGB(255, 255, 255, 255),
+    primaryColorDark: const Color.fromARGB(255, 255, 255, 255),
     textTheme: const TextTheme(
       headline1: TextStyle(color: Color.fromARGB(255, 0, 0, 0)),            
     ),
@@ -16,10 +16,10 @@ class MyTheme{
     cardColor: creamColor,
     canvasColor: creamColor,
     textButtonTheme: TextButtonThemeData(
-      style: TextButton.styleFrom(primary: Color.fromARGB(255, 76, 46, 228)),
+      style: TextButton.styleFrom(primary: const Color.fromARGB(255, 76, 46, 228)),
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
-      style: ElevatedButton.styleFrom(primary: Color.fromARGB(255, 76, 46, 228))
+      style: ElevatedButton.styleFrom(primary: const Color.fromARGB(255, 76, 46, 228))
     ),
      floatingActionButtonTheme: const FloatingActionButtonThemeData(
       backgroundColor: Color.fromARGB(255, 76, 46, 228),
@@ -41,8 +41,8 @@ class MyTheme{
     ),
     brightness: Brightness.dark,
     fontFamily: GoogleFonts.poppins().fontFamily,
-    cardColor: Color.fromARGB(255, 31, 35, 46),
-    canvasColor: Color.fromARGB(255, 34, 33, 33),
+    cardColor: const Color.fromARGB(255, 31, 35, 46),
+    canvasColor: const Color.fromARGB(255, 34, 33, 33),
     textButtonTheme: TextButtonThemeData(
       style: TextButton.styleFrom(primary: Colors.lightBlue),
     ),
@@ -61,10 +61,10 @@ class MyTheme{
   );
 
   //COLORS:
-  static Color creamColor = Color(0xfff5f5f5);
-  static Color darkColor = Color.fromARGB(255, 34, 33, 33);
+  static Color creamColor = const Color(0xfff5f5f5);
+  static Color darkColor = const Color.fromARGB(255, 34, 33, 33);
   static Color lightBlue = Colors.lightBlue;
-  static Color darkBlue = Color.fromARGB(255, 56, 56, 56);
+  static Color darkBlue = const Color.fromARGB(255, 56, 56, 56);
 
 
 }

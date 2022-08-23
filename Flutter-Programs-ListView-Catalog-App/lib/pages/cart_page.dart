@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
 
+import '../core/store.dart';
 import '../models/cart.dart';
 
 
@@ -37,14 +38,21 @@ class _CartTotal extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _cart = CartModel();
+     //create a METHOD calling CartModel CLASS
+      final CartModel _cart = (VxState.store as MyStore).cart;
+
     return SizedBox(
       height: 200,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
+          VxBuilder(
+            mutations: const {RemoveMutation},
+            builder: (context, _){
+             return "\$${_cart.totalPrice}".text.xl5.color(Theme.of(context).primaryColor).make();
+          },),
           //totalPrice method called using CLASS OBJECT _card        
-        "\$${_cart.totalPrice}".text.xl5.color(Theme.of(context).primaryColor).make(),
+        
         30.widthBox,
         ElevatedButton(
           onPressed: () {},
@@ -57,10 +65,13 @@ class _CartTotal extends StatelessWidget {
 
 //ITEM LIST METHOD
 class _CartList extends StatelessWidget{
-  //create a METHOD calling CartModel CLASS
-  final _cart = CartModel();
+ 
   @override
   Widget build(BuildContext context) {
+    VxState.listen(context, to: [RemoveMutation]);
+     //create a METHOD calling CartModel CLASS
+    final CartModel _cart = (VxState.store as MyStore).cart;
+
     return _cart.items.isEmpty?"Add Items to Cart to show!".text.xl3.makeCentered(): ListView.builder(
       itemCount: _cart.items.length,
       itemBuilder: (context, index) => ListTile(
@@ -68,10 +79,9 @@ class _CartList extends StatelessWidget{
         trailing: IconButton(
           //remove items from cart
           icon: const Icon(Icons.remove_circle_outline),
-          onPressed: (){
-            _cart.remove(_cart.items[index]);
+          onPressed: ()=>
+            RemoveMutation(_cart.items[index]),
             
-          },
         ),
         //item name from index called using CLASS OBJECT _card
         title: _cart.items[index].name.text.make(),

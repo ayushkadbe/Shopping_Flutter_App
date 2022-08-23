@@ -52,7 +52,13 @@ CLEAN CODE:
 * Make Stateful of pages to stateless
   in cart_page.dart & add_to_cart.dart;
 * Remove unused imports.
-
+* Create a AddMutation() WIDGET for adding items replace with _cart.add() method
+  & also use AddMutation() in VxState.listen(context, to: [AddMutation]) to redraw the widget in statelesswidget
+  or
+  FOR REFRESHING ONLY CERTAIN/component of a screen
+  > Use VxConsumer(   mutations: const {RemoveMutation},) instaed of Container: []
+   or VxBuilder
+   
 CART_PAGE ALGO: -
 =================
 cart page consists of a stateless widget with a column

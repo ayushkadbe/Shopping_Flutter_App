@@ -7,7 +7,7 @@ class CatalogModel{
 
   //GET ITEM BY ID METHOD
   //custom method =          get firstWhere (element)  => whose element.id == my id
-  Item getById(int id) => items.firstWhere((element) => element.id == id, orElse: null);
+  Item getById(int id) => items.firstWhere((element) => element.id == id,);
 
   //GET ITEM BY POSITION
   Item getByPosition(int pos) => items[pos];

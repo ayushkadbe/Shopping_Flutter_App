@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/models/cart.dart';
 import 'package:myapp/models/catalog.dart';
 import 'package:myapp/pages/product_details_page.dart';
-import 'package:myapp/widgets/theme.dart';
 // ignore: import_of_legacy_library_into_null_safe
 import 'package:velocity_x/velocity_x.dart';
 
