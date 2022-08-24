@@ -1,4 +1,6 @@
 // ignore: import_of_legacy_library_into_null_safe
+// ignore_for_file: depend_on_referenced_packages
+
 import 'package:myapp/models/cart.dart';
 import 'package:myapp/models/catalog.dart';
 // ignore: import_of_legacy_library_into_null_safe

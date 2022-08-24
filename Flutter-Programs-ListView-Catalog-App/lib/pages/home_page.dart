@@ -1,10 +1,16 @@
+// ignore_for_file: depend_on_referenced_packages
+
+import 'dart:developer';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:myapp/core/store.dart';
+import 'package:myapp/models/cart.dart';
 import 'package:myapp/models/catalog.dart';
 import 'package:myapp/utils/routes.dart';
 import 'dart:convert';
-// ignore: import_of_legacy_library_into_null_safe
+import 'package:badges/badges.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 import '../widgets/home_widgets/catalog_header.dart';
@@ -52,17 +58,39 @@ class _HomePageState extends State<HomePage> {
   //when their are less items in catalog.dart then self generate items for UI testing
   @override
   Widget build(BuildContext context){
+    final cart = (VxState.store as MyStore).cart;
+
+
     //create a list to check what
     return Scaffold(
       backgroundColor: Theme.of(context).cardColor,
       //cream color so that WHITE COLOR OF CARD can be HIGHLIGHTED
 
       //CART BUTTON on homepage floating
-      floatingActionButton: FloatingActionButton(
-        onPressed: () => Navigator.pushNamed(context, MyRoutes.cartRoute), 
-        
-        child: const Icon(CupertinoIcons.cart),
+      floatingActionButton: VxConsumer(
+        mutations: const {AddMutation, RemoveMutation},
+        builder:(ctx, _, __) => Badge(
+          position: BadgePosition.topEnd(top: 0, end: 3),
+          badgeContent: Text(
+             cart.items.length.toString(),
+             style: const TextStyle(color: Colors.white),
+          ),
+          child: FloatingActionButton(
+            onPressed: () => Navigator.pushNamed(context, MyRoutes.cartRoute),           
+            child: const Icon(CupertinoIcons.cart),
+          ),       
+         
+        ),
       ),
+      /* child: VxBuilder(
+          mutations: const {AddMutation, RemoveMutation},
+          builder:(ctx, _, __) =>  FloatingActionButton(
+            onPressed: () => Navigator.pushNamed(context, MyRoutes.cartRoute),           
+            child: const Icon(CupertinoIcons.cart),
+          )
+        ), */
+      //https://www.geeksforgeeks.org/flutter-implementing-badges/
+      //.badge(color: Vx.white, size: 20, count: _cart.items.length, textstyle: TextStyle(color: Colors.black, fontweight: bold))
       
 
     //listview builder gives recylerView for list, it renders other items of list only on scrolling

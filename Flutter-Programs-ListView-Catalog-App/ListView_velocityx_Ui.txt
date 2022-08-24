@@ -53,7 +53,8 @@ CLEAN CODE:
   in cart_page.dart & add_to_cart.dart;
 * Remove unused imports.
 * Create a AddMutation() WIDGET for adding items replace with _cart.add() method
-  & also use AddMutation() in VxState.listen(context, to: [AddMutation]) to redraw the widget in statelesswidget
+  & also use AddMutation() in  VxState.watch(context, on: [AddMutation, RemoveMutation]);
+ to redraw the widget in statelesswidget
   or
   FOR REFRESHING ONLY CERTAIN/component of a screen
   > Use VxConsumer(   mutations: const {RemoveMutation},) instaed of Container: []

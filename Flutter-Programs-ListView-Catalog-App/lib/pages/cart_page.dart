@@ -48,7 +48,7 @@ class _CartTotal extends StatelessWidget {
         children: [
           VxBuilder(
             mutations: const {RemoveMutation},
-            builder: (context, _){
+            builder: (context, _, __){
              return "\$${_cart.totalPrice}".text.xl5.color(Theme.of(context).primaryColor).make();
           },),
           //totalPrice method called using CLASS OBJECT _card        
@@ -68,7 +68,7 @@ class _CartList extends StatelessWidget{
  
   @override
   Widget build(BuildContext context) {
-    VxState.listen(context, to: [RemoveMutation]);
+    VxState.watch(context, on: [RemoveMutation]);
      //create a METHOD calling CartModel CLASS
     final CartModel _cart = (VxState.store as MyStore).cart;
 

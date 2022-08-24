@@ -18,7 +18,7 @@ class AddToCart extends StatelessWidget {
     //If this happens -> then do this
     //VxState.listen is TO change the STATE of UI on trigger inside stateless widget
     //Here, AddMutation is Action of Adding a Item of an id. > Which will Redraw the widget
-    VxState.listen(context, to: [AddMutation, RemoveMutation]);
+    VxState.watch(context, on: [AddMutation, RemoveMutation]);
 
     //get CartModel from store.dart
     final CartModel _cart = (VxState.store as MyStore).cart;
