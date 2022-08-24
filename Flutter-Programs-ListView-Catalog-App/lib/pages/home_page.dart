@@ -1,10 +1,7 @@
 // ignore_for_file: depend_on_referenced_packages
 
-import 'dart:developer';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:myapp/core/store.dart';
 import 'package:myapp/models/cart.dart';
 import 'package:myapp/models/catalog.dart';
@@ -12,9 +9,9 @@ import 'package:myapp/utils/routes.dart';
 import 'dart:convert';
 import 'package:badges/badges.dart';
 import 'package:velocity_x/velocity_x.dart';
-
 import '../widgets/home_widgets/catalog_header.dart';
 import '../widgets/home_widgets/catalog_list.dart';
+import 'package:http/http.dart' as http;
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -28,6 +25,9 @@ class _HomePageState extends State<HomePage> {
 
   final String name = "PiedPiper";
 
+  //JSON CATALOG URL
+  final url = "https://api.npoint.io/8d733da5ae7ebfe8581f";
+
   @override
   //initState(): It initializes a Class, You get data when a Widget is not built, Build method is not called
   void initState(){
@@ -40,7 +40,12 @@ class _HomePageState extends State<HomePage> {
   loadData()async {
     await Future.delayed(const Duration(seconds: 1));
     //rootBundle to fetch DATA In string, takes time so await & store in catalogJson
-    final catalogJson = await rootBundle.loadString("assets/files/catalog.json");
+    // final catalogJson = await rootBundle.loadString("assets/files/catalog.json");
+       //OR
+    final response = await http.get(Uri.parse(url));  //this gives response from url
+    final catalogJson = response.body;  //get json data 
+    
+
     //Json decoder(string to map) and encoder
     final decodedData = jsonDecode(catalogJson);
     var productData = decodedData["products"];  
