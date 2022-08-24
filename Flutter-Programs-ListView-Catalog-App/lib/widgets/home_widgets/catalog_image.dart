@@ -14,6 +14,6 @@ class CatalogImage extends StatelessWidget{
   Widget build(BuildContext context){
     //this is the Box of Image inside the CARD LIKE BOX of the List
     return Image.network(image)
-        .box.rounded.p8.color(context.canvasColor).make().p16().w40(context);
+        .box.rounded.p8.color(context.canvasColor).make().p16().wPCT(context: context,widthPCT: context.isMobile?40:20);
   }
 }

@@ -46,13 +46,22 @@ Step 6) Now in loadData() in home_page.dart
   - await delay
   -check in ListView line 60 and progress bar
 
-FETCH DATA:
+NETWORK FETCH DATA:
 ===========
 * First we fetched DATA from LOCAL JSON FILE, now we will fetch data from JSON file at a URL
   final url = "https://api.npoint.io/8d733da5ae7ebfe8581f";
    final response = await http.get(Uri.parse(url));  //this gives response from url
     final catalogJson = response.body;  //get json data 
+
+    Data from Web may not Load no Certain Devices like Web, macos, ios, android or windows 
+    ON different different devices SOURCE CODE needs Internet Access Permission.
+    Make sure you give Permission before running on each device or operating system
  
+UI for different Devices:
+=========================
+put condition to check which device is used & Use that code for that device.
+use context.isMobile and add condition statements with alternating code or alternating dimentional values
+
 CLEAN CODE:
 ===========
 * Remove Singletons in cart & catalog model

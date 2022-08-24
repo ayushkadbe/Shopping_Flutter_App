@@ -16,7 +16,26 @@ class CatalogList extends StatelessWidget{
 
   @override 
   Widget build(BuildContext context){
-    return ListView.builder(
+    return !context.isMobile? GridView.builder(
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3, crossAxisSpacing: 20),
+
+      shrinkWrap: true,
+      itemCount: CatalogModel.items.length,
+      itemBuilder: (context, index) {
+        //final catalog = CatalogModel.items[index]; ORg =
+        final catalog = CatalogModel.items[index];
+        return InkWell(
+          //Navigate from homeScreen to ProductDetails Page of Item of that Catalog
+          onTap: () => Navigator.push(context, MaterialPageRoute(
+            builder: (context)=> ProductDetails(
+              catalog: catalog,
+              )
+            )
+          ),
+          child: CatalogItem(catalog: catalog, key: null,));
+          
+        },
+    ):ListView.builder(
       shrinkWrap: true,
       itemCount: CatalogModel.items.length,
       itemBuilder: (context, index) {
@@ -44,12 +63,7 @@ class CatalogItem extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     //ADD ITEMS TO BE SHOWS ON LIST
-    return VxBox(
-      //ROW: TO SHOW ITEMS like Image, Price, desc etc
-     
-      child: Row(
-        //wrapped IMAGE in a BOX
-        children: [
+    var children2 = [
           CatalogImage(image: catalog.image,),
           //expanded text aligned right center to the card box
           Expanded(child: Column( 
@@ -71,9 +85,16 @@ class CatalogItem extends StatelessWidget{
                 ],
               ).pOnly(right: 8),
             ],
-          ))
-        ],
-      )
+          ).p(context.isMobile?0: 16),
+          )
+        ];
+    return VxBox(
+      //ROW: TO SHOW ITEMS like Image, Price, desc etc
+     
+      child: context.isMobile? Row(
+        //wrapped IMAGE in a BOX
+        children: children2,
+      ):Column(children: children2,)
     ).color(context.canvasColor).rounded.square(150).make().py16();
     //py16 is padding of 16 between ROW ITEM , which creates a CARD with roundedLg for rounded corners
   }
