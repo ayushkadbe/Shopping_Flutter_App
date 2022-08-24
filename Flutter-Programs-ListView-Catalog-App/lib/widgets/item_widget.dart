@@ -7,7 +7,7 @@ class ItemWidget extends StatelessWidget{
   final Item item;
 
   //constructor of class object
-  const ItemWidget({Key? key, required this.item}) : assert(item !=null), super(key: key);
+  const ItemWidget({Key? key, required this.item}) : super(key: key);
     
 
   @override
@@ -18,7 +18,7 @@ class ItemWidget extends StatelessWidget{
     return Card(
       child: ListTile(
         onTap:() {
-          print("${item.name} pressed");
+          //print("${item.name} pressed");
         },
         leading: Image.network(item.image),
         title: Text(item.name),

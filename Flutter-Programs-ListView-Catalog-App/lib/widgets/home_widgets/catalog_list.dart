@@ -1,3 +1,5 @@
+// ignore_for_file: depend_on_referenced_packages
+
 import 'package:flutter/material.dart';
 import 'package:myapp/models/catalog.dart';
 import 'package:myapp/pages/product_details_page.dart';

@@ -1,3 +1,5 @@
+// ignore_for_file: depend_on_referenced_packages
+
 import 'package:flutter/material.dart';
 import 'package:myapp/core/store.dart';
 // ignore: import_of_legacy_library_into_null_safe
@@ -21,10 +23,10 @@ class AddToCart extends StatelessWidget {
     VxState.watch(context, on: [AddMutation, RemoveMutation]);
 
     //get CartModel from store.dart
-    final CartModel _cart = (VxState.store as MyStore).cart;
+    final CartModel cart = (VxState.store as MyStore).cart;
 
     //UI: Check if CART contains item from catalog then TRUE or: FALSE
-    bool isInCart = _cart.items.contains(catalog);
+    bool isInCart = cart.items.contains(catalog);
 
     return ElevatedButton(
       onPressed: (){

@@ -1,4 +1,4 @@
-// ignore_for_file: import_of_legacy_library_into_null_safe
+// ignore_for_file: import_of_legacy_library_into_null_safe, depend_on_referenced_packages
 
 import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
@@ -39,7 +39,7 @@ class _CartTotal extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
      //create a METHOD calling CartModel CLASS
-      final CartModel _cart = (VxState.store as MyStore).cart;
+      final CartModel cart = (VxState.store as MyStore).cart;
 
     return SizedBox(
       height: 200,
@@ -49,7 +49,7 @@ class _CartTotal extends StatelessWidget {
           VxBuilder(
             mutations: const {RemoveMutation},
             builder: (context, _, __){
-             return "\$${_cart.totalPrice}".text.xl5.color(Theme.of(context).primaryColor).make();
+             return "\$${cart.totalPrice}".text.xl5.color(Theme.of(context).primaryColor).make();
           },),
           //totalPrice method called using CLASS OBJECT _card        
         
@@ -70,21 +70,21 @@ class _CartList extends StatelessWidget{
   Widget build(BuildContext context) {
     VxState.watch(context, on: [RemoveMutation]);
      //create a METHOD calling CartModel CLASS
-    final CartModel _cart = (VxState.store as MyStore).cart;
+    final CartModel cart = (VxState.store as MyStore).cart;
 
-    return _cart.items.isEmpty?"Add Items to Cart to show!".text.xl3.makeCentered(): ListView.builder(
-      itemCount: _cart.items.length,
+    return cart.items.isEmpty?"Add Items to Cart to show!".text.xl3.makeCentered(): ListView.builder(
+      itemCount: cart.items.length,
       itemBuilder: (context, index) => ListTile(
         leading: const Icon(Icons.done),
         trailing: IconButton(
           //remove items from cart
           icon: const Icon(Icons.remove_circle_outline),
           onPressed: ()=>
-            RemoveMutation(_cart.items[index]),
+            RemoveMutation(cart.items[index]),
             
         ),
         //item name from index called using CLASS OBJECT _card
-        title: _cart.items[index].name.text.make(),
+        title: cart.items[index].name.text.make(),
       ),
     );
   }

@@ -5,7 +5,7 @@ import 'package:myapp/utils/routes.dart';
 import 'package:myapp/widgets/theme.dart';
 import 'pages/cart_page.dart';
 import 'pages/home_page.dart';
-// ignore: import_of_legacy_library_into_null_safe
+// ignore: import_of_legacy_library_into_null_safe, depend_on_referenced_packages
 import 'package:velocity_x/velocity_x.dart';
 //import 'package:device_preview/device_preview.dart';
 
