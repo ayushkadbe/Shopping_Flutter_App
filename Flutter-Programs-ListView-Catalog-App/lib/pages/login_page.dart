@@ -1,6 +1,8 @@
+// ignore_for_file: depend_on_referenced_packages
+
 import 'package:flutter/material.dart';
 import 'package:myapp/utils/routes.dart';
-
+import 'package:velocity_x/velocity_x.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -22,7 +24,8 @@ class _LoginPageState extends State<LoginPage> {
       setState(() {
         changeButton = true;
       });
-      Navigator.pushNamed(context, MyRoutes.homeRoute);
+    
+      context.vxNav.push(Uri.parse(MyRoutes.homeRoute));
       //After Login if the User comes back to login screen then it resets to normal Login BUtton without animation
       setState(() {
         changeButton = false;

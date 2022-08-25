@@ -81,7 +81,7 @@ class _HomePageState extends State<HomePage> {
              style: const TextStyle(color: Colors.white),
           ),
           child: FloatingActionButton(
-            onPressed: () => Navigator.pushNamed(context, MyRoutes.cartRoute),           
+            onPressed: () =>  context.vxNav.push(Uri.parse(MyRoutes.cartRoute)),           
             child: const Icon(CupertinoIcons.cart),
           ),       
          

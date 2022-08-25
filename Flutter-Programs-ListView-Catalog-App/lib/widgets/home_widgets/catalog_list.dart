@@ -3,12 +3,12 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/models/catalog.dart';
 import 'package:myapp/pages/product_details_page.dart';
+import 'package:myapp/utils/routes.dart';
 // ignore: import_of_legacy_library_into_null_safe
 import 'package:velocity_x/velocity_x.dart';
 
 import 'add_to_cart.dart';
 import 'catalog_image.dart';
-
 
 //CatalogList shows the items fetched using CatalogItem constructor in the ListView.builder  
 class CatalogList extends StatelessWidget{
@@ -35,6 +35,8 @@ class CatalogList extends StatelessWidget{
           child: CatalogItem(catalog: catalog, key: null,));
           
         },
+          
+      
     ):ListView.builder(
       shrinkWrap: true,
       itemCount: CatalogModel.items.length,
@@ -49,10 +51,15 @@ class CatalogList extends StatelessWidget{
               )
             )
           ),
+
+          //OR for product id in url
+          //  onTap: () => context.vxNav.push(Uri(path: MyRoutes.productDetailsRoute, queryParameters: {"id": catalog.id.toString()}), params: catalog), 
           child: CatalogItem(catalog: catalog, key: null,));
           
         },
     );
+
+    
   }
 }
 
