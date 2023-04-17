@@ -1,5 +1,7 @@
 // ignore_for_file: depend_on_referenced_packages
 
+import 'package:badges/badges.dart' as badge;
+import 'package:badges/badges.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:myapp/core/store.dart';
@@ -7,7 +9,6 @@ import 'package:myapp/models/cart.dart';
 import 'package:myapp/models/catalog.dart';
 import 'package:myapp/utils/routes.dart';
 import 'dart:convert';
-import 'package:badges/badges.dart';
 import 'package:velocity_x/velocity_x.dart';
 import '../widgets/home_widgets/catalog_header.dart';
 import '../widgets/home_widgets/catalog_list.dart';
@@ -74,7 +75,7 @@ class _HomePageState extends State<HomePage> {
       //CART BUTTON on homepage floating
       floatingActionButton: VxConsumer(
         mutations: const {AddMutation, RemoveMutation},
-        builder:(ctx, _, __) => Badge(
+        builder:(ctx, _, __) => badge.Badge(
           position: BadgePosition.topEnd(top: 0, end: 3),
           badgeContent: Text(
              cart.items.length.toString(),
